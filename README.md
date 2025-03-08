@@ -1,50 +1,88 @@
-# React + TypeScript + Vite
+# MapaSys - Sistema de Gestão para Provedores de Internet
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+MapaSys é uma aplicação web completa desenvolvida para provedores de internet, oferecendo funcionalidades para gerenciamento de clientes, contratos, agendamentos, documentos e muito mais.
 
-Currently, two official plugins are available:
+## Tecnologias Utilizadas
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Frontend**: React 18, TypeScript, Vite, TailwindCSS
+- **Backend**: Node.js, Express
+- **Banco de Dados**: Supabase (PostgreSQL), MySQL (para integração com Radius)
+- **Mapas**: Google Maps API
+- **Calendário**: FullCalendar
+- **Gráficos**: Chart.js, Recharts
+- **Integração de Pagamentos**: ASAAS API
+- **Drag and Drop**: DnD Kit, React Beautiful DnD
+- **Editores**: React Quill (editor de texto)
+- **Exportação de Documentos**: HTML2PDF, jsPDF, PDFMake
 
-## Expanding the ESLint configuration
+## Funcionalidades Principais
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **Dashboard**: Visualização de métricas e indicadores de desempenho
+- **Gestão de Clientes**: Cadastro, edição e gerenciamento de clientes
+- **Gestão de Contratos**: Criação e gerenciamento de contratos
+- **Agenda**: Agendamento de instalações e visitas técnicas
+- **Documentos**: Editor de documentos com modelos personalizáveis
+- **Mapas**: Visualização geográfica de clientes e instalações
+- **Relatórios**: Geração de relatórios financeiros e operacionais
+- **Integração com Radius**: Gerenciamento de autenticação e acesso à rede
 
-- Configure the top-level `parserOptions` property like this:
+## Instalação e Configuração
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+### Pré-requisitos
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+- Node.js 18+ e npm
+- MySQL (para integração com Radius)
+- Conta no Supabase
+- Conta no ASAAS (para integração de pagamentos)
+- Chave de API do Google Maps
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+### Configuração do Ambiente
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/seu-usuario/mapasys.git
+   cd mapasys
+   ```
+
+2. Instale as dependências:
+   ```bash
+   npm install
+   ```
+
+3. Configure as variáveis de ambiente:
+   - Copie o arquivo `.env.example` para `.env`
+   - Preencha as variáveis com suas credenciais
+
+4. Inicie o servidor de desenvolvimento:
+   ```bash
+   npm run dev
+   ```
+
+## Estrutura do Projeto
+
+- `/src`: Código-fonte principal
+  - `/assets`: Recursos estáticos
+  - `/components`: Componentes React reutilizáveis
+  - `/contexts`: Contextos React para gerenciamento de estado
+  - `/hooks`: Hooks personalizados
+  - `/lib`: Bibliotecas e configurações
+  - `/pages`: Páginas da aplicação
+  - `/server`: Código do servidor Express
+  - `/services`: Serviços para comunicação com APIs
+  - `/types`: Definições de tipos TypeScript
+  - `/utils`: Funções utilitárias
+
+## Implantação
+
+O projeto está configurado para implantação em:
+- Docker (usando docker-compose)
+- Vercel
+- Render
+
+## Contribuição
+
+Contribuições são bem-vindas! Por favor, sinta-se à vontade para enviar pull requests.
+
+## Licença
+
+Este projeto está licenciado sob a licença [sua licença aqui].
